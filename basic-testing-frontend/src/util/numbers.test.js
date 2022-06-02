@@ -36,7 +36,12 @@ describe("cleanNumbers()", () => {
 
     const cleanedNumbers = cleanNumbers(numberValues);
 
-    expect(cleanedNumbers[0]).toBeTypeOf("number");
+    // expect(cleanedNumbers[0]).toBeTypeOf("number");
+
+    // toBe expect exactly the same value (remember that arrays are reference values)
+    // expect(cleanedNumbers).toBe([1, 2]);
+
+    expect(cleanedNumbers).toEqual([1, 2]);
   });
 
   it("Should throw an error if an array with at least one empty string is provided", () => {
