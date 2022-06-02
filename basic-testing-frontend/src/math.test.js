@@ -38,3 +38,10 @@ it("Should yield 0 if an empty array is provided", () => {
   const result = add(numbers);
   expect(result).toBe(0);
 });
+
+it("Should throw an error if no value is passed into the function", () => {
+  const resultFn = () => {
+    add();
+  };
+  expect(resultFn).toThrow();
+});
