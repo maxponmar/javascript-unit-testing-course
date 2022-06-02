@@ -36,13 +36,14 @@ it("Should generate a token value", (done) => {
 
 it("Should generate token value", () => {
   const testUserEmail = "test@test.com";
-
-  expect(generateTokenPromise(testUserEmail)).resolves.toBeDefined();
+  // Even though the test worked as expected in the previous lecture, you should actually return the promise assertion in your tests:
+  // This guarantees that Vitest / Jest wait for the promise to be resolved.
+  return expect(generateTokenPromise(testUserEmail)).resolves.toBeDefined();
 });
 
 it("Should generate token value", async () => {
   const testUserEmail = "test@test.com";
   const token = await generateTokenPromise(testUserEmail);
-
+  // You don't need to return when using async / await (since a function annotated with async returns a promise implicitly).
   expect(token).toBeDefined();
 });
