@@ -35,3 +35,13 @@ it("Should not contain an error paragraph initially", () => {
 
   expect(errorParagraph).toBeNull();
 });
+
+it("Should output the provided message in the error paragraph", () => {
+  const testErrorMessage = "test";
+  showError(testErrorMessage);
+
+  const errorsEl = document.getElementById("errors");
+  const errorParagraph = errorsEl.firstElementChild;
+
+  expect(errorParagraph.textContent).toBe(testErrorMessage);
+});
